@@ -1,14 +1,14 @@
 {
   "name": "technical-indicator-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "You need to have node installed and have yahoo-dl to be able to download the stock data. You can install it by using the following command.",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",  
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "npm run build",
-    "prepublishOnly" : "npm test",
-    "version" : "git add -A src",
-    "postversion" : "git push && git push --tags",
+    "prepublishOnly": "npm test",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags",
     "build": "tsc",
     "test": "jest",
     "start": "ts-node ./src/main.ts"
