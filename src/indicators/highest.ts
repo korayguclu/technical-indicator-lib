@@ -1,4 +1,4 @@
-const HIGHEST = (arr: number[], timeporid: number): number[] => {
+const HH = (arr: number[], timeporid: number): number[] => {
     let result: number[] = [];
     let queue = [];
     for (let i = 0; i < timeporid - 1; i++) {
@@ -13,4 +13,4 @@ const HIGHEST = (arr: number[], timeporid: number): number[] => {
     return result;
 }
 
-export {HIGHEST};
+export {HH};
