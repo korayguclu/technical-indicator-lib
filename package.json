@@ -1,5 +1,5 @@
 {
-  "name": "fidelity-stock-ranker",
+  "name": "technical-indicator-lib",
   "version": "1.0.0",
   "description": "You need to have node installed and have yahoo-dl to be able to download the stock data. You can install it by using the following command.",
   "main": "dist/index.js",

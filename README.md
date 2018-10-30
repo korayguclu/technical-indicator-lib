@@ -1,3 +1,3 @@
-# technical-indicators
+# Technical indicator library
 
 
