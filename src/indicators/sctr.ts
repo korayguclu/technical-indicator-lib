@@ -23,17 +23,24 @@ import {RSL} from './rsl';
 import {PPO} from './ppo';
 import {RSI} from './rsi';
 
-const SCTR = (close: number[]): number[]  => {
+const SCTR = (close: number[])  => {
+    if( close.length<200) {
+      throw new Error("Price array length can not be less than 200");
+    }
     let sctr: number[] = [];
     const rsl200 = RSL(close,200);
     const roc125 = ROC(close,125);
     const rsl50 = RSL(close,50);
     const roc20 = ROC(close,20);
-    const ppoData = PPO(close);
     const rsiData = RSI(close,14);
-
-    
-
-    return sctr;
+    const result = [];
+    for(let i = 0;i<200;i++){
+      result.push(null);
+    }
+    for (let k =200;k<rsl200.length;k++) {
+      const data = rsl200[k] *.30 + roc125[k] *.30 + rsl50[k]*.15+ roc20[k] *.15 + rsiData[k]*.05;
+      result.push(parseFloat(data.toFixed(4)));
+    }
+    return result;
 }
 export {SCTR};
